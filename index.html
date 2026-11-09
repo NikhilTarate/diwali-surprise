@@ -1,0 +1,833 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Diwali, My Love ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #170608;
+    color: #fff3dc;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+
+    background:
+        radial-gradient(circle at 50% 30%, #64201d, transparent 45%),
+        linear-gradient(135deg, #170608, #350b10, #120406);
+}
+
+.background::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: .12;
+
+    background-image: radial-gradient(#ffdc8a 1px, transparent 1px);
+    background-size: 35px 35px;
+}
+
+
+/* OPENING SCREEN */
+
+#opening {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    text-align: center;
+    padding: 20px;
+
+    background: radial-gradient(circle, #762a20, #310b10 55%, #120406);
+
+    transition: opacity 1.2s ease, visibility 1.2s ease;
+}
+
+#opening.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.small-heading {
+    color: #f5cb7c;
+    letter-spacing: 5px;
+    font-size: 12px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.opening-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(45px, 9vw, 85px);
+    color: #ffe3a3;
+    font-weight: 400;
+    margin-bottom: 12px;
+    text-shadow: 0 0 25px #f5a54b;
+}
+
+.opening-subtitle {
+    color: #f6d9c0;
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+
+
+/* ENVELOPE */
+
+.envelope {
+    width: 210px;
+    height: 150px;
+
+    background: linear-gradient(145deg, #e6ae59, #a65a28);
+
+    position: relative;
+    cursor: pointer;
+
+    border: none;
+    outline: none;
+    border-radius: 5px;
+
+    box-shadow: 0 15px 45px #0009;
+
+    animation: float 3s infinite ease-in-out;
+
+    appearance: none;
+}
+
+.envelope::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    border-left: 105px solid transparent;
+    border-right: 105px solid transparent;
+    border-top: 85px solid #f1c77d;
+
+    transform-origin: top;
+    transition: transform .7s;
+
+    z-index: 2;
+}
+
+.envelope::after {
+    content: "❤️";
+
+    position: absolute;
+    top: 55px;
+    left: 0;
+
+    width: 100%;
+    text-align: center;
+
+    font-size: 30px;
+    z-index: 3;
+}
+
+.envelope.opened::before {
+    transform: rotateX(180deg);
+}
+
+.envelope-label {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+
+    width: 100%;
+    text-align: center;
+
+    color: #49140d;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 11px;
+
+    z-index: 4;
+}
+
+.click-text {
+    margin-top: 35px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #f6c978;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes pulse {
+    50% {
+        opacity: .4;
+    }
+}
+
+
+/* MAIN CONTENT */
+
+#main-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+#main-content.show {
+    opacity: 1;
+}
+
+section {
+    padding: 85px 20px;
+    text-align: center;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 90vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hero h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(55px, 10vw, 100px);
+    color: #ffdc94;
+    text-shadow: 0 0 30px #f7a33b88;
+}
+
+.hero p {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    letter-spacing: 2px;
+    margin-top: 20px;
+    color: #ffe6ce;
+}
+
+.divider {
+    width: 90px;
+    height: 2px;
+    background: #e6ad58;
+    margin: 28px auto;
+}
+
+
+/* DIYAS */
+
+.diyas {
+    font-size: 30px;
+    margin-top: 30px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        filter: drop-shadow(0 0 4px #ff9e34);
+    }
+    to {
+        filter: drop-shadow(0 0 18px #ffcf70);
+    }
+}
+
+
+/* LETTER */
+
+.letter-section {
+    max-width: 850px;
+    margin: auto;
+}
+
+.section-heading {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(40px, 7vw, 65px);
+    color: #ffdb9a;
+    margin-bottom: 35px;
+    font-weight: 400;
+}
+
+.letter {
+    background: linear-gradient(145deg, #fff0d6, #f4d5a9);
+    color: #54251c;
+
+    padding: clamp(25px, 6vw, 55px);
+
+    border-radius: 5px;
+    box-shadow: 0 15px 50px #0007;
+
+    text-align: left;
+    line-height: 2;
+
+    position: relative;
+}
+
+.letter::before {
+    content: "♥";
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    font-size: 28px;
+    color: #bb5a4c;
+}
+
+.letter h3 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 35px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: #8d3028;
+}
+
+.letter p {
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.signature {
+    font-family: 'Great Vibes', cursive;
+    font-size: 32px !important;
+    color: #8d3028;
+    margin-top: 25px;
+}
+
+
+/* GALLERY */
+
+.gallery-section {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 40px;
+}
+
+.photo {
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #d8a75e;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px #0008;
+    aspect-ratio: 4 / 5;
+    background: #411216;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .6s ease;
+}
+
+.photo:hover img {
+    transform: scale(1.1);
+}
+
+.photo-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px 5px;
+    background: linear-gradient(transparent, #160507dd);
+    color: #ffe5b6;
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+}
+
+
+/* FINAL SECTION */
+
+.final-section {
+    padding-bottom: 110px;
+}
+
+.final-message {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(40px, 8vw, 75px);
+    color: #ffdc9b;
+    margin: 25px 0;
+}
+
+.final-section p {
+    color: #f8d8c6;
+    font-size: 14px;
+    line-height: 2;
+}
+
+
+/* MUSIC BUTTON */
+
+.music-button {
+    position: fixed;
+    bottom: 22px;
+    right: 20px;
+    z-index: 200;
+
+    border: 1px solid #e9bd70;
+    background: #581b20;
+    color: #ffe2a5;
+
+    border-radius: 50px;
+    padding: 12px 18px;
+
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+
+    box-shadow: 0 5px 20px #0008;
+}
+
+
+/* FLOATING HEARTS */
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    z-index: 10;
+    pointer-events: none;
+    animation: rise linear forwards;
+}
+
+@keyframes rise {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* MOBILE */
+
+@media(max-width: 700px) {
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    section {
+        padding: 65px 17px;
+    }
+
+    .letter {
+        line-height: 1.9;
+    }
+}
+
+@media(max-width: 380px) {
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="background"></div>
+
+
+<!-- OPENING SCREEN -->
+
+<div id="opening">
+
+    <div class="small-heading">
+        A little surprise for someone special
+    </div>
+
+    <h1 class="opening-title">
+        Happy Diwali, My Love ❤️
+    </h1>
+
+    <p class="opening-subtitle">
+        I have something special waiting for you...
+    </p>
+
+    <button class="envelope" id="envelope" type="button">
+
+        <span class="envelope-label">
+            OPEN WITH LOVE
+        </span>
+
+    </button>
+
+    <div class="click-text">
+        TAP THE ENVELOPE TO OPEN ❤️
+    </div>
+
+</div>
+
+
+<!-- MAIN WEBSITE -->
+
+<div id="main-content">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="small-heading">
+            A celebration of love and light
+        </div>
+
+        <h1>
+            Happy Diwali, Meri Jaan!
+        </h1>
+
+        <div class="divider"></div>
+
+        <p>
+            To the most beautiful part of my world ❤️
+        </p>
+
+        <div class="diyas">
+            🪔 ✨ 🪔
+        </div>
+
+    </section>
+
+
+    <!-- LETTER -->
+
+    <section class="letter-section">
+
+        <h2 class="section-heading">
+            A Little Letter For You
+        </h2>
+
+        <div class="letter">
+
+            <h3>My Favourite Girl,</h3>
+
+            <p>
+                If I could light a diya for every reason I love you,
+                the whole world would glow.
+            </p>
+
+            <p>
+                You are the most beautiful part of my story,
+                the warmth in my ordinary days, and the one person
+                with whom I want to make a million more memories. ❤️
+            </p>
+
+            <p>
+                I don't need a perfect Diwali when I have someone
+                like you making my ordinary days feel special.
+            </p>
+
+            <p>
+                May this Diwali bring you endless happiness,
+                beautiful surprises, and all the love your heart deserves.
+            </p>
+
+            <p>
+                Happy Diwali, meri jaan! 🪔❤️
+            </p>
+
+            <p>
+                One wish, one smile, one lifetime — always with you. ✨
+            </p>
+
+            <p class="signature">
+                Forever yours ❤️
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PHOTO GALLERY -->
+
+    <section class="gallery-section">
+
+        <h2 class="section-heading">
+            Our Little World ❤️
+        </h2>
+
+        <p style="color:#f5d7bd; font-size:14px;">
+            Six pictures, countless memories, and a million more to come.
+        </p>
+
+        <div class="divider"></div>
+
+        <div class="gallery">
+
+            <div class="photo">
+                <img src="./image_1.jpeg" alt="Our memory 1">
+                <div class="photo-caption">My favourite memory ❤️</div>
+            </div>
+
+            <div class="photo">
+                <img src="./image_2.jpeg" alt="Our memory 2">
+                <div class="photo-caption">You and me ✨</div>
+            </div>
+
+            <div class="photo">
+                <img src="./image_3.jpeg" alt="Our memory 3">
+                <div class="photo-caption">Beautiful moments</div>
+            </div>
+
+            <div class="photo">
+                <img src="./image_4.jpeg" alt="Our memory 4">
+                <div class="photo-caption">Together ❤️</div>
+            </div>
+
+            <div class="photo">
+                <img src="./image_5.jpeg" alt="Our memory 5">
+                <div class="photo-caption">My happy place</div>
+            </div>
+
+            <div class="photo">
+                <img src="./image_6.jpeg" alt="Our memory 6">
+                <div class="photo-caption">Forever memories 🥹</div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL MESSAGE -->
+
+    <section class="final-section">
+
+        <div class="diyas">
+            🪔 ✨ 🪔
+        </div>
+
+        <h2 class="final-message">
+            You are my favourite blessing.
+        </h2>
+
+        <p>
+            No matter how many festivals come and go,<br>
+            I will always be grateful for having you in my life.
+        </p>
+
+        <div class="divider"></div>
+
+        <p style="font-family:'Playfair Display',serif;">
+            Happy Diwali, Princess ❤️
+        </p>
+
+    </section>
+
+</div>
+
+
+<!-- AUDIO: YOUR ACTUAL FILE IS song.mp4 -->
+
+<audio id="backgroundMusic" loop preload="auto">
+    <source src="./song.mp4" type="audio/mp4">
+</audio>
+
+
+<!-- MUSIC CONTROL -->
+
+<button class="music-button" id="musicButton"
+        type="button" style="display:none;">
+
+    🎵 Music On
+
+</button>
+
+
+<script>
+
+/* GET HTML ELEMENTS */
+
+const envelope = document.getElementById("envelope");
+const opening = document.getElementById("opening");
+const main = document.getElementById("main-content");
+
+const music = document.getElementById("backgroundMusic");
+const musicButton = document.getElementById("musicButton");
+
+let surpriseOpened = false;
+let heartsStarted = false;
+
+
+/* OPEN ENVELOPE */
+
+envelope.addEventListener("click", function () {
+
+    if (surpriseOpened) return;
+
+    surpriseOpened = true;
+
+    envelope.classList.add("opened");
+
+    // Reveal the main website
+    main.style.display = "block";
+
+    requestAnimationFrame(function () {
+
+        requestAnimationFrame(function () {
+            main.classList.add("show");
+        });
+
+    });
+
+    // Hide the opening screen
+    opening.classList.add("hide");
+
+    setTimeout(function () {
+        opening.style.display = "none";
+    }, 1300);
+
+
+    // Start music on the envelope click
+    musicButton.style.display = "block";
+
+    music.volume = 1;
+
+    music.play().then(function () {
+
+        musicButton.textContent = "🎵 Music On";
+
+    }).catch(function (error) {
+
+        console.error("Music error:", error);
+
+        musicButton.textContent = "▶ Play Music";
+
+    });
+
+
+    startHearts();
+
+});
+
+
+/* MUSIC PLAY / PAUSE */
+
+musicButton.addEventListener("click", function () {
+
+    if (music.paused) {
+
+        music.play().then(function () {
+
+            musicButton.textContent = "🎵 Music On";
+
+        }).catch(function (error) {
+
+            console.error("Music error:", error);
+
+            musicButton.textContent = "▶ Play Music";
+
+        });
+
+    } else {
+
+        music.pause();
+
+        musicButton.textContent = "🔇 Music Off";
+
+    }
+
+});
+
+
+/* FLOATING HEARTS */
+
+function startHearts() {
+
+    if (heartsStarted) return;
+
+    heartsStarted = true;
+
+    setInterval(function () {
+
+        const heart = document.createElement("div");
+
+        heart.className = "heart";
+
+        const types = ["❤️", "💕", "💖", "✨"];
+
+        heart.textContent =
+            types[Math.floor(Math.random() * types.length)];
+
+        heart.style.left = Math.random() * 100 + "vw";
+
+        heart.style.fontSize =
+            (15 + Math.random() * 20) + "px";
+
+        heart.style.animationDuration =
+            (5 + Math.random() * 5) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(function () {
+            heart.remove();
+        }, 10000);
+
+    }, 650);
+
+}
+
+
+/* REPORT AUDIO ERRORS */
+
+music.addEventListener("error", function () {
+
+    console.error(
+        "Cannot load song.mp4. Check the filename, format and audio codec."
+    );
+
+});
+
+music.addEventListener("ended", function () {
+
+    console.log("Song ended.");
+
+});
+
+</script>
+
+</body>
+</html>
